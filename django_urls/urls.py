@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path, register_converter
+from django.urls import include, path, re_path, register_converter
 from app import views
 from app.utils import FourDigitYearConverter
 
@@ -28,5 +28,9 @@ urlpatterns = [
     path('articles/<int:year>/<int:month>/', views.home_view),
     path('articles/<int:year>/<int:month>/<slug:slug>/', views.home_view),
     re_path(r"^articles/(?:page-(?P<page_number>[0-9]+)/)?$", views.home_view),
+    re_path(r"^articles/(?P<year>[0-9]{4})/$", views.home_view),
+    re_path(r"^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$", views.home_view),
     path("articles/<yyyy:year>/", views.home_view),
+    path("blog/page<int:num>/", views.view_with_default_arg), # With default argument in View
+    path("app/", include("app.urls")),
 ]

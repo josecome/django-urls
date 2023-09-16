@@ -5,4 +5,9 @@ from django.shortcuts import render
 
 def home_view(request):
     data = {}
-    return render(request, 'home.html', {'data': data}) 
+    return render(request, 'home.html', {'data': data})
+
+
+def view_with_default_arg(request, num=1):
+    data = {}
+    return render(request, 'home.html', {'data': data})    
