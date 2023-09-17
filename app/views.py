@@ -4,30 +4,30 @@ from django.shortcuts import render
 
 
 def home_view(request):
-    data = {}
+    data = "home"
     return render(request, 'home.html', {'data': data})
 
 
 def home_view2(request, year):
-    data = {}
+    data = str(year)
     return render(request, 'home.html', {'data': data})
 
 
 def home_view3(request, year, month):
-    data = {}
+    data = str(year) + ', ' + str(month)
     return render(request, 'home.html', {'data': data})
 
 
 def home_view4(request, year, month, name):
-    data = {}
+    data = str(year) + ', ' + str(month) + ', ' + name
     return render(request, 'home.html', {'data': data})
 
 
 def home_view5(request, page_number):
-    data = {}
+    data = str(page_number)
     return render(request, 'home.html', {'data': data})
 
 
 def view_with_default_arg(request, num=1):
-    data = {}
+    data = str(num)
     return render(request, 'home.html', {'data': data})    

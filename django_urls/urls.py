@@ -47,7 +47,7 @@ urlpatterns = [
     path("articles/<yyyy:year>/", views.home_view2),
 
     # Dinamic url that only change number of last part
-    path("blog/page<int:num>/", views.view_with_default_arg), # With default argument in View
+    path("articles/page<int:num>/", views.view_with_default_arg), # With default argument in View
 
     # Including urls from other app
     path("app/", include("app.urls")),
