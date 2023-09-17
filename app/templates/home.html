@@ -9,6 +9,17 @@
         </title>
     </head>
     <body>
-      <h1>Urls</h1>
+        <div><h1>Wellcome page!</h1><br />Page: {% if data is not None %} {{ data }} {% endif %}</div>
+        <div>
+        <strong>Urls</strong><br />
+        <a href="/">Home</a><br />
+        <a href="/articles/2023/">Page a: static parameter</a><br />
+        <a href="/articles/2023/">Page b: dinamic parameter (number): 2023</a><br />
+        <a href="/articles/2023/10">Page c: dinamic parameters '2023/10'</a><br />
+        <a href="/articles/2023/10/name">Page d: dinamic parameters '2023/10/name'</a><br />
+        <a href="/articles/1234/articles/page-1">Page e: start with 'articles' and end with 'number'</a><br />
+        <a href="/articles/1234/articles/P2023">Page e: start with 'articles' and end with 'Pnumber(Optional)'</a><br />
+        <a href="/articles/1234/articles/P2023/P10">Page e: start with 'articles', as 'Pnumber(Optional)' and end with 'Pnumber(Optional)'</a><br />
+        </div>
     </body>
 </html>

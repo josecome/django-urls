@@ -24,27 +24,27 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
 
     # Home page: only slash
-    path('', views.home_view),
+    path('', views.home_view1),
 
     # Static urls: 2003
-    path('articles/2003/', views.home_view),
+    path('articles/2023/', views.home_view2),
 
     # Dinamic urls: accept int 
-    path('articles/<int:year>/', views.home_view),
+    path('articles/<int:year>/', views.home_view2),
 
     # Dinamic urls accept year/month
-    path('articles/<int:year>/<int:month>/', views.home_view),
+    path('articles/<int:year>/<int:month>/', views.home_view3),
 
     # Dinamic urls accept year/month/slug
-    path('articles/<int:year>/<int:month>/<slug:slug>/', views.home_view),
+    path('articles/<int:year>/<int:month>/<str:name>/', views.home_view4),
 
     # Dinamic urls that start with articles and with optional int value at the end
-    re_path(r"^articles/(?:page-(?P<page_number>[0-9]+)/)?$", views.home_view),  
-    re_path(r"^articles/(?P<year>[0-9]{4})/$", views.home_view),
-    re_path(r"^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$", views.home_view),
+    re_path(r"^books/(?:page-(?P<page_number>[0-9]+)/)?$", views.home_view),  
+    re_path(r"^books/(?P<year>[0-9]{4})/$", views.home_view),
+    re_path(r"^books/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$", views.home_view),
 
     # Dinamic Customized parameter 
-    path("articles/<yyyy:year>/", views.home_view),
+    path("articles/<yyyy:year>/", views.home_view2),
 
     # Dinamic url that only change number of last part
     path("blog/page<int:num>/", views.view_with_default_arg), # With default argument in View
